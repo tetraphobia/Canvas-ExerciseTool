@@ -1,10 +1,10 @@
 # Canvas Exercise Grader
 
-Fetches every student's **full submission history** for all assignments in the "Exercises" group, applies the correct grading policy, and exports a Canvas-compatible gradebook CSV ready for manual import.
+Fetches every student's full submission history for all assignments in the "Exercises" group, applies 2181's grading policy, and exports a Canvas-compatible gradebook CSV ready for manual import.
 
 ## Prerequisites
 - Python 3.7+
-- [requests](https://pypi.org/project/requests/) (`pip install requests`)
+- [requests](https://pypi.org/project/requests/)
 
 ## Configuration
 
@@ -19,14 +19,17 @@ Set the following environment variables before running:
 ## Usage
 
 ```sh
+pip install -r requirements.txt
 export CANVAS_BASE_URL="https://instructure.charlotte.edu"
 export CANVAS_TOKEN="1234~your_token_here"
 export CANVAS_COURSE_ID="98765"
 
-python grader.py
+python grader.py [output_file]
 ```
 
-The script prints progress as it runs and writes **`grades_updated.csv`** in the current directory when finished.
+An optional output filename can be provided as the first argument. Defaults to `grades_updated.csv`.
+
+The script prints progress as it runs and writes the output file in the current directory when finished.
 
 ## Importing the CSV into Canvas
 

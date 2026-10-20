@@ -8,7 +8,7 @@ BASE_URL = os.environ["CANVAS_BASE_URL"].rstrip("/")
 TOKEN = os.environ["CANVAS_TOKEN"]
 COURSE_ID = os.environ["CANVAS_COURSE_ID"]
 HEADERS = {"Authorization": f"Bearer {TOKEN}"}
-OUTPUT_FILE = "grades_updated.csv"
+OUTPUT_FILE = sys.argv[1] if len(sys.argv) > 1 else "grades_updated.csv"
 
 
 def paginate(url, params=None):
