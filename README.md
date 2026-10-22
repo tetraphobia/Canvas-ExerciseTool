@@ -1,14 +1,12 @@
 # Canvas Exercise Grader
 
-Fetches every student's full submission history for all assignments in the "Exercises" group, applies 2181's grading policy, and exports a Canvas-compatible gradebook CSV ready for manual import.
+Fetches every student's full submission history for all assignments in the "Exercises" group, applies 2181's grading policy, and exports a Canvas-compatible gradebook CSV for manual import.
 
 ## Prerequisites
 - Python 3.7+
 - [requests](https://pypi.org/project/requests/)
 
 ## Configuration
-
-Set the following environment variables before running:
 
 | Variable | Description |
 |----------|-------------|
@@ -28,8 +26,6 @@ python grader.py [output_file]
 ```
 
 An optional output filename can be provided as the first argument. Defaults to `grades_updated.csv`.
-
-The script prints progress as it runs and writes the output file in the current directory when finished.
 
 ## Importing the CSV into Canvas
 

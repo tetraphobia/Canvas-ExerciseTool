@@ -70,8 +70,8 @@ def parse_dt(s):
 def compute_grade(submission, due_at, points_possible):
     history = [h for h in submission.get("submission_history", []) if h.get("submitted_at")]
     if not history:
-        if due_at and parse_dt(due_at) > datetime.now(timezone.utc):
-            return None  # due date hasn't passed yet, leave blank
+        if due_at is None or parse_dt(due_at) > datetime.now(timezone.utc):
+            return None
         return 0
     if due_at is None:
         return points_possible

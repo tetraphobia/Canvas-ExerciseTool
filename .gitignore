@@ -1,3 +1,4 @@
+grade.sh
 *.csv
 __pycache__/
 *.pyc
